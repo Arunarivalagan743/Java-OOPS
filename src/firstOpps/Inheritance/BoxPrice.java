@@ -1,4 +1,4 @@
 package firstOpps.Inheritance;
 
-public class Box {
+public class BoxPrice {
 }
