@@ -1,28 +1,32 @@
 package firstOpps.Inheritance;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
-        Box a = new Box();
-        Box b = new Box(4);
-        Box c = new Box(3, 4);     // Fixed: use two-argument constructor
-        Box d = new Box(a);        // Copy constructor
-        Weight w = new Weight(4, 9, 8);  //child is inherit all field of the parent becuse it in herits the patrent
+        Box box1 = new Box(4.6, 7.9, 9.9);
+        box1.getL();
+        Box box2 = new Box(box1);
+//        System.out.println(box1.w + " " + box1.h);
 
-        System.out.println(w.h + " " + w.weight + " " + w.l);  // From Weight object
-//        System.out.println(b.l + " " + b.h);                   // From Box (cube)
-//        System.out.println(c.l + " " + c.h);                   // From Box (rectangle)
-//        System.out.println(d.l + " " + d.h);                   // From copy
+//        BoxWeight box3 = new BoxWeight();
+//        BoxWeight box4 = new BoxWeight(2, 3, 4, 8);
+//        System.out.println(box3.h + " " + box3.weight);
 
 
-        Box box = new Weight(1, 3, 4);  //here class weight object is create d by Box class type reference using refrence variable of the object box is only to accesss tthe Box fields only
+//        Box box5 = new BoxWeight(2, 3, 4, 8);
+//        System.out.println(box5.w);
 
-//        System.out.println(box.h);       // ✅ Allowed
-//        System.out.println(box.l);       // ✅ Allowed
-//        System.out.println(box.weight);  // ❌ Compile-time error: weight is not in Box
+        // there are many variables in both parent and child classes
+        // you are given access to variables that are in the ref type i.e. BoxWeight
+        // hence, you should have access to weight variable
+        // this also means, that the ones you are trying to access should be initialised
+        // but here, when the obj itself is of type parent class, how will you call the constructor of child class
+        // this is why error
+//        BoxWeight box6 = new Box(2, 3, 4);
+//        System.out.println(box6);
 
-//        Weight w = (Weight) box;
-//        System.out.println(w.weight); // ✅ Works now
-        //  Weight w = new Box(1, 2,5);here in the type refernece of weight only have initialzed the weight not l and h
-        //so it became error
+//        Box.greeting();
+
+        BoxWeight box = new BoxWeight();
+        firstOpps.Inheritance.BoxWeight.greeting(); // you can inherit but you cannot override
     }
 }

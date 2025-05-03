@@ -1,4 +1,6 @@
 package firstOpps.Inheritance;
 
-public class BoxColor {
+
+public class BoxColor extends BoxWeight {
+
 }
